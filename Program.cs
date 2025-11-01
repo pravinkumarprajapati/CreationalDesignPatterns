@@ -6,15 +6,13 @@ namespace Abstraction
     {
         static void Main(string[] args)
         {
-             Animal myDog = new Dog { Name = "Buddy" }; 
-            
+            Animal myDog = new Dog { Name = "Buddy" };
+
             Singleton singleton1 = Singleton.Instance;
 
             SingletonThree singletonThree = SingletonThree.Instance;
         }
     }
-
-
     public interface IFlyable
     {
         void Fly();
@@ -23,18 +21,17 @@ namespace Abstraction
     public interface ISwimmable
     {
         void Swim();
-    }   
+    }
     public interface IVehicle
     {
-        
         void StartEngine();
     }
     public abstract class Animal : IFlyable
     {
-        public   delegate int Age();
-        public  string Name { get; set; }
+        public delegate int Age();
+        public string Name { get; set; }
         public Animal()
-        {            
+        {
         }
         public abstract void Speak();
         public abstract void Eat();

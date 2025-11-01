@@ -18,8 +18,8 @@ namespace Abstraction.src
 
     public sealed class SingletonTwo
     {
-        private static SingletonTwo _instance = null;
-        private static readonly object _lock = new object();
+        private static SingletonTwo? _instance = null;
+        private static readonly Lock _lock = new();
         public static SingletonTwo Instance
         {
             get
@@ -28,10 +28,8 @@ namespace Abstraction.src
                 {
                     lock (_lock)
                     {
-                        if (_instance == null)
-                        {
-                            _instance = new SingletonTwo();
-                        }
+                        _instance ??= new SingletonTwo();
+
                     }
                 }
                 return _instance;
@@ -44,7 +42,7 @@ namespace Abstraction.src
 
     public sealed class SingletonThree
     {
-        public static readonly SingletonThree Instance ;
+        public static readonly SingletonThree Instance;
         static SingletonThree()
         {
             Instance = new SingletonThree();
