@@ -7,14 +7,7 @@ using System.Threading.Tasks;
 
 namespace Abstraction.src
 {
-    public interface CreditCard
-    {
-        string GetCardType();
-        int GetCreditLimit();
-        int GetAnnualCharge();
-
-    }
-
+    
     public interface INotifier
     {
         void Send(string message);
